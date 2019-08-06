@@ -42,7 +42,7 @@ module.exports.getUserByUsername = function(username, callback){
             console.log(err)
         }
         else{
-            //console.log("you can now authenticate users")
+            console.log("you can now authenticate users")
             const db = client.db('kitchen')
             const query = { 'userName': username}
             db.collection('users').findOne(query,callback)
