@@ -35,6 +35,7 @@ const users = require('./routes/users')
 
 const app = express()
 
+app.use(express.static('public'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/users', users)
