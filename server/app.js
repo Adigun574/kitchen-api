@@ -41,10 +41,19 @@ app.use('/users', users)
 app.use('/products', products)
 app.use('/sales',sales)
 
-app.get("/",(req,res)=>{
+// app.get("/",(req,res)=>{
+//     res.send("welcome to heaven motherfuckers")
+// })
+
+// app.listen(port, ()=>{
+//     console.log(`server started on port ${port}`)
+// })
+
+app.get("/",function(req,res){
     res.send("welcome to heaven motherfuckers")
 })
 
-app.listen(port, ()=>{
+app.listen(port,function(){
     console.log(`server started on port ${port}`)
 })
+
