@@ -33,6 +33,7 @@ const port = process.env.PORT || 3000
 
 const users = require('./routes/users')
 
+
 const app = express()
 
 app.use(express.static('public'))
@@ -41,6 +42,12 @@ app.use(bodyParser.json())
 app.use('/users', users)
 app.use('/products', products)
 app.use('/sales',sales)
+
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
 
 app.get("/",(req,res)=>{
     res.send("welcome to heaven motherfuckers")
